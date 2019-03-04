@@ -68,7 +68,8 @@ module.exports = {
                   receiverId: req.params.receiver_Id,
                   sendername: req.user.username,
                   receivername: req.body.receiverName,
-                  body: req.body.message
+                  body: req.body.message,
+                  image: req.body.message
                 }
               }
             }
@@ -101,7 +102,8 @@ module.exports = {
             receiverId: req.params.receiver_Id,
             sendername: req.user.username,
             receivername: req.body.receiverName,
-            body: req.body.message
+            body: req.body.message,
+            image: req.body.message
           });
 
           await User.update(
