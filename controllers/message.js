@@ -103,7 +103,7 @@ module.exports = {
             sendername: req.user.username,
             receivername: req.body.receiverName,
             body: req.body.message,
-            image: req.body.message
+            image: req.body.image
           });
 
           await User.update(
