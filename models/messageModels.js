@@ -10,16 +10,9 @@ const MessageSchema = mongoose.Schema({
       receiverId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
       sendername: { type: String },
       receivername: { type: String },
-      body: { 
-        type: String, 
-        default: '', 
-        images: [
-          {
-            imgVersion: { type: String, default: '' },
-            imgId: { type: String, default: '' }
-          },
-        ]
-      },
+      body: { type: String, default: '' },
+      imgVersion: { type: String, default: '' },
+      imgId: { type: String, default: '' },
       isRead: { type: Boolean, default: false },
       createdAt: { type: Date, default: Date.now() }
     }
