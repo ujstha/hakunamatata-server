@@ -11,6 +11,7 @@ const MessageSchema = mongoose.Schema({
       sendername: { type: String },
       receivername: { type: String },
       body: { type: String, default: '' },
+      image: { type: String, default: '' },
       isRead: { type: Boolean, default: false },
       createdAt: { type: Date, default: Date.now() }
     }
