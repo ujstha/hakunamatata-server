@@ -90,7 +90,7 @@ module.exports = {
 
   async ChangePassword(req, res) {
     const schema = Joi.object().keys({
-      cpassword: Joi.string().required(),
+      currentpassword: Joi.string().required(),
       newPassword: Joi.string()
         .min(5)
         .required(),
@@ -106,7 +106,7 @@ module.exports = {
 
     const user = await User.findOne({ _id: req.user._id });
 
-    return bcrypt.compare(value.cpassword, user.password).then(async result => {
+    return bcrypt.compare(value.currentpassword, user.password).then(async result => {
       if (!result) {
         return res
           .status(httpStatus.INTERNAL_SERVER_ERROR)
