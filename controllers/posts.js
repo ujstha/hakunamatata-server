@@ -16,7 +16,7 @@ const User = require('../models/userModels');
 module.exports = {
   AddPost(req, res) {
     const schema = Joi.object().keys({
-      post: Joi.string().required()
+      post: Joi.string()
     });
     const body = {
       post: req.body.post
@@ -91,6 +91,19 @@ module.exports = {
               .status(HttpStatus.INTERNAL_SERVER_ERROR)
               .json({ message: 'Error occured' });
           });
+      });
+    }
+
+    if (!req.body.post && req.body.image) {
+      cloudinary.uploader.upload(req.body.image, async result => {
+        const reqBody = {
+          user: req.user._id,
+          username: req.user.username,
+          post: req.body.post,
+          imgId: result.public_id,
+          imgVersion: result.version,
+          created: new Date()
+        };
       });
     }
   },
