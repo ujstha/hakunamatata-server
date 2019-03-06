@@ -16,7 +16,7 @@ const User = require('../models/userModels');
 module.exports = {
   AddPost(req, res) {
     const schema = Joi.object().keys({
-      post: Joi.string().required()
+      post: Joi.string()
     });
     const body = {
       post: req.body.post
