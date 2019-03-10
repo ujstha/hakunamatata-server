@@ -43,7 +43,7 @@ app.use('/api/hakunamatata', friends);
 app.use('/api/hakunamatata', message);
 app.use('/api/hakunamatata', image);
 
-let port = process.env.PORT || 4000;
+let port = process.env.PORT || 3000;
 
 server.listen(port, () => 
   console.log('Running on port '+port)
