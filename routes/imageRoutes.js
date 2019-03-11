@@ -6,7 +6,7 @@ const ImageCtrl = require('../controllers/images');
 const AuthHelper = require('../Helpers/AuthHelper');
 
 router.get(
-  '/set-default-image/:imgId/:imgVersion',
+  '/set-default-image/:imgVersion/:imgId',
   AuthHelper.VerifyToken,
   ImageCtrl.SetDefaultImage
 );
