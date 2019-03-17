@@ -36,12 +36,12 @@ mongoose.connect(
   { useNewUrlParser: true }
 );
 
-app.use('/api/hakunamatata', auth);
-app.use('/api/hakunamatata', posts);
-app.use('/api/hakunamatata', users);
-app.use('/api/hakunamatata', friends);
-app.use('/api/hakunamatata', message);
-app.use('/api/hakunamatata', image);
+app.use('/api/spade', auth);
+app.use('/api/spade', posts);
+app.use('/api/spade', users);
+app.use('/api/spade', friends);
+app.use('/api/spade', message);
+app.use('/api/spade', image);
 
 let port = process.env.PORT || 3000;
 
