@@ -139,9 +139,6 @@ module.exports = {
 
     await User.update(
       {
-        _id: req.user._id
-      },
-      {
         image: req.body.image
       }
     )
