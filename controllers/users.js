@@ -133,28 +133,5 @@ module.exports = {
             .json({ message: 'Error occured' });
         });
     });
-  },
-
-  async ChangeProPic(req, res) {
-    const user = await User.findOne({ _id: req.user._id });
-
-    await User.update(
-      {
-        _id: user._id
-      },
-      {
-        image: req.body.image
-      }
-    )
-      .then(() => {
-        res
-          .status(httpStatus.OK)
-          .json({ message: 'Profile Pic changed successfully' });
-      })
-      .catch(err => {
-        res
-          .status(httpStatus.INTERNAL_SERVER_ERROR)
-          .json({ message: 'Error occured' });
-      });
   }
 };

@@ -18,10 +18,5 @@ router.post(
   AuthHelper.VerifyToken,
   UserCtrl.ChangePassword
 );
-router.post(
-  '/change-pic',
-  AuthHelper.VerifyToken,
-  UserCtrl.ChangeProPic
-);
 
 module.exports = router;
