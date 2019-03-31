@@ -17,8 +17,7 @@ module.exports = {
       email: Joi.string()
         .email()
         .required()
-        .regex(/spade\.com$/)
-        .options({ language: { any: { allowOnly: 'Email should end with "@spade.com"' } } }),
+        .regex(/spade\.com$/),
       password: Joi.string()
         .min(5)
         .required()
