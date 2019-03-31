@@ -42,7 +42,7 @@ const userSchema = mongoose.Schema({
       imgVersion: { type: String, default: '' }
     }
   ],
-  profilePic: { type: String, default: ''},
+  image: { type: String, default: ''},
   city: { type: String, default: '' },
   country: { type: String, default: '' }
 });

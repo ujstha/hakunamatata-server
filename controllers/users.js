@@ -142,7 +142,7 @@ module.exports = {
         _id: req.user._id
       },
       {
-        profilePic: newProfilePic
+        image: req.body.image
       }
     )
       .then(() => {
