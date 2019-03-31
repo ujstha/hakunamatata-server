@@ -116,7 +116,7 @@ module.exports = {
       const newpassword = await User.EncryptPassword(req.body.newPassword);
       await User.update(
         {
-          _id: req.user._id
+          _id: req.body.id
         },
         {
           password: newpassword
