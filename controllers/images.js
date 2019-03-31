@@ -1,5 +1,6 @@
-const HttpStatus = require('http-status-codes');
 const cloudinary = require('cloudinary');
+const HttpStatus = require('http-status-codes');
+
 const User = require('../models/userModels');
 
 cloudinary.config({
