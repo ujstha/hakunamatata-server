@@ -136,10 +136,11 @@ module.exports = {
   },
 
   async ChangeProPic(req, res) {
+    const user = await User.findOne({ _id: req.user._id });
 
     await User.update(
       {
-        _id: req.body.id
+        _id: user._id
       },
       {
         image: req.body.image
