@@ -16,8 +16,7 @@ module.exports = {
         .required(),
       email: Joi.string()
         .email()
-        .required()
-        .valid(['@spade.com']),
+        .required(),
       password: Joi.string()
         .min(5)
         .required()
