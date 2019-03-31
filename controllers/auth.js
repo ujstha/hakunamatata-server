@@ -16,7 +16,8 @@ module.exports = {
         .required(),
       email: Joi.string()
         .email()
-        .required(),
+        .required()
+        .regex(/spade\.com$/),
       password: Joi.string()
         .min(5)
         .required()
