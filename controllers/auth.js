@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/userModels');
 const Helpers = require('../Helpers/helpers');
 const dbConfig = require('../config/database');
+import * as $ from "jquery";
+
 
 module.exports = {
   async CreateUser(req, res) {
@@ -16,7 +18,8 @@ module.exports = {
         .required(),
       email: Joi.string()
         .email()
-        .required(),
+        .required()
+        .valid('@spade.com'),
       password: Joi.string()
         .min(5)
         .required()
