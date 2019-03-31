@@ -133,5 +133,27 @@ module.exports = {
             .json({ message: 'Error occured' });
         });
     });
+  },
+
+  async ChangeProPic(req, res) {
+
+    await User.update(
+      {
+        _id: req.user._id
+      },
+      {
+        profilePic: newProfilePic
+      }
+    )
+      .then(() => {
+        res
+          .status(httpStatus.OK)
+          .json({ message: 'Profile Pic changed successfully' });
+      })
+      .catch(err => {
+        res
+          .status(httpStatus.INTERNAL_SERVER_ERROR)
+          .json({ message: 'Error occured' });
+      });
   }
 };
