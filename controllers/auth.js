@@ -17,7 +17,7 @@ module.exports = {
       email: Joi.string()
         .email()
         .required()
-        .regex(/spade\.com$/),
+        .regex(/@spade\.com$/),
       password: Joi.string()
         .min(5)
         .required()
@@ -59,7 +59,7 @@ module.exports = {
       };
       User.create(body)
         .then(user => {
-          const token = jwt.sign({ data: user }, dbConfig.secret//, {expiresIn: '24h'}
+          const token = jwt.sign({ data: user }, dbConfig.secret, {expiresIn: '60'}
           );
           res.cookie('auth', token);
           res
@@ -95,7 +95,7 @@ module.exports = {
               .status(HttpStatus.INTERNAL_SERVER_ERROR)
               .json({ message: 'Password is incorrect' });
           }
-          const token = jwt.sign({ data: user }, dbConfig.secret//, {expiresIn: '24h'}
+          const token = jwt.sign({ data: user }, dbConfig.secret, {expiresIn: '60'}
           );
           res.cookie('auth', token);
           return res
