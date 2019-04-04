@@ -20,6 +20,8 @@ module.exports = {
         .regex(/@spade\.com$/),
       password: Joi.string()
         .min(5)
+        .required(),
+      image: Joi.string()
         .required()
     });
 
@@ -55,7 +57,8 @@ module.exports = {
       const body = {
         username: Helpers.firstUpper(value.username),
         email: Helpers.lowerCase(value.email),
-        password: hash
+        password: hash,
+        image: value.image
       };
       User.create(body)
         .then(user => {
