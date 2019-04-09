@@ -25,7 +25,7 @@ module.exports = {
 
     const { error, value } = Joi.validate(req.body, schema);
     if (error && error.details) {
-      if(error.details == '"email" with value "'+value.email+'" fails to match the required pattern: /@spade\.com$/'){
+      if(error.details == '"email" with value "'+req.body.email+'" fails to match the required pattern: /@spade\.com$/'){
         return res.status(HttpStatus.BAD_REQUEST).json({ msg: 'Please put "@spade.com" at the email of your email' });
       }
       else {
