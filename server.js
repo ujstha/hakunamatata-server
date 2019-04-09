@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const _ = require('lodash');
+var logger = require('morgan');
 
 const app = express();
 
