@@ -7,7 +7,7 @@ const _ = require('lodash');
 const app = express();
 
 app.use(cors());
-app.options('*', cors());
+//app.options('*', cors());
 
 const server = require('http').createServer(app);
 const io = require('socket.io').listen(server);
